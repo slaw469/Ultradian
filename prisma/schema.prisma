@@ -51,6 +51,24 @@ model User {
 
   accounts Account[]
   sessions Session[]
+
+  // Onboarding and Preferences
+  onboardingCompleted Boolean @default(false)
+  chronotype         String?  // EARLY_BIRD, NIGHT_OWL, etc.
+  workStartTime      String?  // HH:mm format
+  workEndTime        String?  // HH:mm format
+  focusBlockDuration Int      @default(90)  // in minutes
+  breakDuration      Int      @default(20)  // in minutes
+  
+  // Calendar Integration
+  calendarConnected  Boolean  @default(false)
+  calendarId         String?
+  
+  // Relationships
+  focusBlocks        FocusBlock[]
+  feedbackLogs       FeedbackLog[]
+  notifications      Notification[]
+  onboardingAnswers  OnboardingQuizResponse[]
 }
 
 model VerificationToken {
@@ -59,4 +77,67 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model FocusBlock {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  startTime   DateTime
+  endTime     DateTime
+  status      String   // PLANNED, IN_PROGRESS, COMPLETED, INTERRUPTED
+  type        String   // DEEP_WORK, BREAK
+  
+  // Calendar Integration
+  calendarEventId String?
+  
+  // Relationships
+  feedbackLogs FeedbackLog[]
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model FeedbackLog {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  focusBlockId String
+  focusBlock   FocusBlock @relation(fields: [focusBlockId], references: [id], onDelete: Cascade)
+  
+  energyLevel  Int      // 1-5 scale
+  focusLevel   Int      // 1-5 scale
+  mood         String   // ENERGIZED, FOCUSED, TIRED, DISTRACTED
+  notes        String?
+  
+  createdAt    DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type      String   // FOCUS_START, BREAK_START, FOCUS_END
+  title     String
+  message   String
+  read      Boolean  @default(false)
+  
+  createdAt DateTime @default(now())
+  scheduledFor DateTime?
+}
+
+// New model for onboarding quiz
+model OnboardingQuizResponse {
+  id        String   @id @default(cuid())
+  userId    String
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+  
+  // Relations
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }

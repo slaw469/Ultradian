@@ -1,6 +1,7 @@
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { getSession } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 
 type CreateContextOptions = {
   session: Awaited<ReturnType<typeof getSession>>;
@@ -12,6 +13,7 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
+    prisma,
   };
 };
 
@@ -25,8 +27,17 @@ export const createTRPCContext = async () => {
 
 const t = initTRPC.context<typeof createTRPCContext>().create({
   transformer: superjson,
-  errorFormatter({ shape }) {
-    return shape;
+  errorFormatter({ shape, error }) {
+    return {
+      ...shape,
+      data: {
+        ...shape.data,
+        zodError:
+          error.cause instanceof Error
+            ? error.cause.message
+            : error.message,
+      },
+    };
   },
 });
 
