@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Brain } from "lucide-react";
 
 const navItems = [
   {
@@ -12,12 +13,16 @@ const navItems = [
     label: "Home",
   },
   {
+    path: "/features",
+    label: "Features",
+  },
+  {
     path: "/pricing",
     label: "Pricing",
   },
   {
-    path: "/features",
-    label: "Features",
+    path: "/about",
+    label: "Science",
   },
 ];
 
@@ -28,7 +33,8 @@ export function MainNav() {
     <div className="flex h-16 items-center justify-between border-b px-4">
       <div className="flex items-center gap-6 md:gap-10">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="font-bold text-xl">ModernSaaS</span>
+          <Brain className="h-6 w-6 text-primary" />
+          <span className="font-bold text-xl">Ultradian</span>
         </Link>
         <nav className="hidden md:flex gap-6">
           {navItems.map((item, index) => (
@@ -57,9 +63,9 @@ export function MainNav() {
           </Link>
           <Link
             href="/auth/register"
-            className={buttonVariants({ size: "sm" })}
+            className={cn(buttonVariants({ size: "sm" }), "gap-2")}
           >
-            Sign Up
+            Try Free
           </Link>
         </nav>
         <ThemeToggle />
