@@ -6,7 +6,26 @@ import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
-import { type User } from "@prisma/client";
+
+// Define User type based on our Prisma schema
+interface User {
+  id: string;
+  name: string | null;
+  email: string;
+  emailVerified: Date | null;
+  image: string | null;
+  password: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+  onboardingCompleted: boolean;
+  chronotype: string | null;
+  workStartTime: string | null;
+  workEndTime: string | null;
+  focusBlockDuration: number;
+  breakDuration: number;
+  calendarConnected: boolean;
+  calendarId: string | null;
+}
 
 declare module "next-auth" {
   interface Session extends DefaultSession {
@@ -89,7 +108,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt"
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || "fallback-secret-for-development",
 };
 
 const handler = NextAuth(authOptions);

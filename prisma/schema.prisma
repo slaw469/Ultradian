@@ -69,6 +69,7 @@ model User {
   feedbackLogs       FeedbackLog[]
   notifications      Notification[]
   onboardingAnswers  OnboardingQuizResponse[]
+  workSessions       WorkSession[]
 }
 
 model VerificationToken {
@@ -94,6 +95,7 @@ model FocusBlock {
   
   // Relationships
   feedbackLogs FeedbackLog[]
+  workSessions WorkSession[]
   
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
@@ -140,4 +142,44 @@ model OnboardingQuizResponse {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+}
+
+// New model for tracking work session activities
+model WorkSession {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  focusBlockId String?
+  focusBlock   FocusBlock? @relation(fields: [focusBlockId], references: [id], onDelete: SetNull)
+  
+  // Session details
+  title        String   // Main activity title
+  description  String?  // Additional context
+  websiteUrl   String?  // Primary website/app URL
+  favicon      String?  // Website favicon URL
+  domain       String?  // Extracted domain
+  startTime    DateTime
+  endTime      DateTime?
+  duration     Int?     // Duration in minutes
+  
+  // Activity tracking
+  tabSwitches  Int      @default(0)
+  totalTabs    Int      @default(1)
+  activityType String?  // CODING, WRITING, RESEARCH, COMMUNICATION, DESIGN, etc.
+  
+  // AI-generated insights
+  aiSummary    String?  // AI-generated session summary
+  nextSteps    Json?    // AI-suggested next steps (array of strings)
+  tags         Json?    // AI-generated tags (array of strings)
+  aiProcessed  Boolean  @default(false)
+  
+  // User feedback
+  rating       Int?     // 1-5 rating
+  notes        String?  // User notes
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  
+  @@index([userId, startTime])
+  @@index([userId, activityType])
 }

@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { getFocusAnalytics } from '@/lib/services/focus-analytics';
-import { authOptions } from '@/lib/auth-config';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 
 export async function GET(request: Request) {
   try {
