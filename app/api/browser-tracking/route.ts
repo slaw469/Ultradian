@@ -11,20 +11,10 @@ export async function POST(req: Request) {
   }
 
   try {
-    const {
-      sessionId,
-      domainTimes,
-      tabSwitches,
-      totalTabs,
-      currentDomain
-    } = await req.json();
+    const body = await req.json();
+    const { sessionId, domainTimes, tabSwitches, totalTabs, currentDomain } = body;
 
-    if (!sessionId) {
-      return NextResponse.json(
-        { error: "Session ID is required" },
-        { status: 400 }
-      );
-    }
+    console.log('Received browser tracking data:', { sessionId, domainTimes, tabSwitches, totalTabs });
 
     const user = await prisma.user.findUnique({
       where: { email: session.user.email },
@@ -34,45 +24,55 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // Find the work session
-    const workSession = await prisma.workSession.findFirst({
-      where: {
-        id: sessionId,
-        userId: user.id,
-        endTime: null // Only update active sessions
-      }
-    });
+    // If sessionId is provided, update specific session
+    if (sessionId) {
+      const workSession = await prisma.workSession.findFirst({
+        where: {
+          id: sessionId,
+          userId: user.id,
+        },
+      });
 
-    if (!workSession) {
-      return NextResponse.json(
-        { error: "Active session not found" },
-        { status: 404 }
-      );
+      if (workSession) {
+        await prisma.workSession.update({
+          where: { id: sessionId },
+          data: {
+            domainTimes: domainTimes || {},
+            tabSwitches: tabSwitches || 0,
+            totalTabs: totalTabs || 0,
+          },
+        });
+      }
+    } else {
+      // Find active session (no endTime) and update it
+      const activeSession = await prisma.workSession.findFirst({
+        where: {
+          userId: user.id,
+          endTime: null,
+        },
+        orderBy: {
+          startTime: 'desc',
+        },
+      });
+
+      if (activeSession) {
+        console.log('Updating active session:', activeSession.id);
+        await prisma.workSession.update({
+          where: { id: activeSession.id },
+          data: {
+            domainTimes: domainTimes || {},
+            tabSwitches: tabSwitches || 0,
+            totalTabs: totalTabs || 0,
+          },
+        });
+      }
     }
 
-    // Update the session with browser tracking data
-    const updatedSession = await prisma.workSession.update({
-      where: { id: sessionId },
-      data: {
-        tabSwitches: tabSwitches || 0,
-        totalTabs: totalTabs || 1,
-        // Store domain times as JSON for detailed analysis
-        domainTimes: domainTimes || {},
-        // Update the main domain if we have current domain info
-        ...(currentDomain && { domain: currentDomain })
-      }
-    });
-
-    return NextResponse.json({
-      success: true,
-      sessionId: updatedSession.id,
-      message: "Browser tracking data updated"
-    });
-
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Browser tracking update error:", error);
+    console.error("Browser tracking sync error:", error);
     return NextResponse.json(
-      { error: "Failed to update browser tracking data" },
+      { error: "Failed to sync browser data" },
       { status: 500 }
     );
   }
@@ -94,32 +94,30 @@ export async function GET(req: Request) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
-    // Get the current active session for browser extension sync
+    // Get current active session
     const activeSession = await prisma.workSession.findFirst({
       where: {
         userId: user.id,
-        endTime: null
+        endTime: null,
       },
       orderBy: {
-        startTime: 'desc'
-      }
+        startTime: 'desc',
+      },
     });
 
-    if (!activeSession) {
-      return NextResponse.json({ error: "No active session found" }, { status: 404 });
+    if (activeSession) {
+      return NextResponse.json({
+        sessionId: activeSession.id,
+        startTime: activeSession.startTime,
+        title: activeSession.title,
+      });
     }
 
-    return NextResponse.json({
-      sessionId: activeSession.id,
-      title: activeSession.title,
-      startTime: activeSession.startTime,
-      description: activeSession.description
-    });
-
+    return NextResponse.json({ message: "No active session" }, { status: 404 });
   } catch (error) {
-    console.error("Browser tracking session fetch error:", error);
+    console.error("Get active session error:", error);
     return NextResponse.json(
-      { error: "Failed to fetch session data" },
+      { error: "Failed to get active session" },
       { status: 500 }
     );
   }

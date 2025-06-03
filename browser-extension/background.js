@@ -11,17 +11,44 @@ class WebNavigationTracker {
     
     this.setupEventListeners();
     this.setupActivityTimer();
+    
+    // Start tracking immediately when extension loads
+    this.autoStartTracking();
+  }
+
+  async autoStartTracking() {
+    // Only auto-start if not already tracking
+    if (this.isTracking) return;
+    
+    try {
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+      if (tab) {
+        // Don't auto-start, just initialize current tab tracking
+        this.currentTab = {
+          id: tab.id,
+          url: tab.url,
+          domain: this.extractDomain(tab.url),
+          startTime: Date.now(),
+          title: tab.title
+        };
+        console.log('Extension loaded, ready to track:', tab.url);
+      }
+    } catch (error) {
+      console.error('Error initializing extension:', error);
+    }
   }
 
   setupEventListeners() {
     // Tab activation (switching tabs)
     chrome.tabs.onActivated.addListener((activeInfo) => {
+      console.log('Tab activated:', activeInfo.tabId);
       this.handleTabChange(activeInfo.tabId);
     });
 
     // Tab updates (URL changes within same tab)
     chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       if (changeInfo.url && tab.active) {
+        console.log('Tab URL changed:', changeInfo.url);
         this.handleUrlChange(tab);
       }
     });
@@ -42,8 +69,11 @@ class WebNavigationTracker {
   }
 
   async handleTabChange(tabId) {
+    if (!this.isTracking) return;
+    
     this.tabSwitches++;
     this.lastActivityTime = Date.now();
+    console.log('Tab switches:', this.tabSwitches);
     
     if (this.currentTab) {
       this.recordDomainTime(this.currentTab);
@@ -59,12 +89,15 @@ class WebNavigationTracker {
         title: tab.title
       };
       this.totalTabs.add(tabId);
+      console.log('Current tab:', this.currentTab.domain, 'Total tabs tracked:', this.totalTabs.size);
     } catch (error) {
       console.error('Error getting tab info:', error);
     }
   }
 
   handleUrlChange(tab) {
+    if (!this.isTracking) return;
+    
     this.lastActivityTime = Date.now();
     
     if (this.currentTab) {
@@ -78,6 +111,7 @@ class WebNavigationTracker {
       startTime: Date.now(),
       title: tab.title
     };
+    console.log('URL changed to:', this.currentTab.domain);
   }
 
   handleWindowBlur() {
@@ -116,16 +150,25 @@ class WebNavigationTracker {
   }
 
   startSession() {
+    console.log('Starting new tracking session');
     this.isTracking = true;
     this.sessionStartTime = Date.now();
     this.domainTimes.clear();
     this.tabSwitches = 0;
     this.totalTabs.clear();
     
-    // Get current active tab
+    // Get current active tab and start tracking it
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) {
-        this.handleTabChange(tabs[0].id);
+        this.currentTab = {
+          id: tabs[0].id,
+          url: tabs[0].url,
+          domain: this.extractDomain(tabs[0].url),
+          startTime: Date.now(),
+          title: tabs[0].title
+        };
+        this.totalTabs.add(tabs[0].id);
+        console.log('Started tracking on tab:', this.currentTab.domain);
       }
     });
   }
@@ -198,7 +241,23 @@ class WebNavigationTracker {
           currentDomain: this.currentTab?.domain,
           sessionDuration: this.sessionStartTime ? 
             Math.round((Date.now() - this.sessionStartTime) / 1000 / 60) : 0,
-          topDomains: this.isTracking ? this.getTopDomains(3) : []
+          topDomains: this.isTracking ? this.getTopDomains(3) : [],
+          tabSwitches: this.tabSwitches,
+          totalTabs: this.totalTabs.size
+        });
+        break;
+
+      case 'getTrackingData':
+        sendResponse({
+          success: true,
+          data: {
+            domainTimes: Object.fromEntries(this.domainTimes),
+            tabSwitches: this.tabSwitches,
+            totalTabs: this.totalTabs.size,
+            currentDomain: this.currentTab?.domain,
+            sessionDuration: this.sessionStartTime ? 
+              Math.round((Date.now() - this.sessionStartTime) / 1000 / 60) : 0
+          }
         });
         break;
         

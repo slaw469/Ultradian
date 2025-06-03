@@ -613,22 +613,20 @@ export function TodaySessionsFeed() {
           )}
 
           {filteredSessions.length > 0 && (
-            <ScrollArea className="max-h-[600px]">
-              <div className="space-y-4">
-                {filteredSessions
-                  .sort((a, b) => b.startTime.getTime() - a.startTime.getTime())
-                  .map((session) => (
-                    <SessionCard
-                      key={session.id}
-                      session={session}
-                      onRatingChange={handleRatingChange}
-                      onNotesChange={handleNotesChange}
-                      onNextStepComplete={handleNextStepComplete}
-                    />
-                  ))
-                }
-              </div>
-            </ScrollArea>
+            <div className="space-y-4">
+              {filteredSessions
+                .sort((a, b) => b.startTime.getTime() - a.startTime.getTime())
+                .map((session) => (
+                  <SessionCard
+                    key={session.id}
+                    session={session}
+                    onRatingChange={handleRatingChange}
+                    onNotesChange={handleNotesChange}
+                    onNextStepComplete={handleNextStepComplete}
+                  />
+                ))
+              }
+            </div>
           )}
         </CardContent>
       </Card>

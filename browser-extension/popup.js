@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const totalTabs = document.getElementById('totalTabs');
 
   let updateInterval;
+  let syncCounter = 0;
 
   // Initialize UI
   updateStatus();
@@ -53,17 +54,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
   async function syncWithApp() {
     try {
-      // Check if app session exists in local storage or get from app
+      // Get current session status from background script
+      const trackingStatus = await chrome.runtime.sendMessage({ action: 'getStatus' });
+      
+      if (!trackingStatus.isTracking) {
+        console.log('Not currently tracking, skipping sync');
+        return;
+      }
+
+      // Get app session data
       const appData = await checkAppSession();
       
-      const response = await chrome.runtime.sendMessage({ 
-        action: 'syncWithApp',
-        sessionData: appData
-      });
-      
-      if (response.success) {
-        // Visual feedback
-        syncBtn.textContent = 'Synced!';
+      if (appData && appData.sessionId) {
+        // Get current tracking data from background script
+        const sessionData = await chrome.runtime.sendMessage({ action: 'getTrackingData' });
+        
+        if (sessionData && sessionData.success && sessionData.data) {
+          // Sync with app
+          const response = await fetch('http://localhost:3000/api/browser-tracking', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            credentials: 'include',
+            body: JSON.stringify({
+              sessionId: appData.sessionId,
+              domainTimes: sessionData.data.domainTimes,
+              tabSwitches: sessionData.data.tabSwitches,
+              totalTabs: sessionData.data.totalTabs,
+              currentDomain: sessionData.data.currentDomain
+            })
+          });
+
+          if (response.ok) {
+            console.log('Successfully synced with app');
+            // Visual feedback
+            syncBtn.textContent = 'Synced!';
+            setTimeout(() => {
+              syncBtn.textContent = 'Sync with App';
+            }, 2000);
+          } else {
+            throw new Error('Sync request failed');
+          }
+        } else {
+          console.log('No valid tracking data available');
+        }
+      } else {
+        console.log('No active app session found');
+        syncBtn.textContent = 'No Active Session';
         setTimeout(() => {
           syncBtn.textContent = 'Sync with App';
         }, 2000);
@@ -104,7 +142,13 @@ document.addEventListener('DOMContentLoaded', function() {
           topDomains.classList.remove('hidden');
         }
         
-        // Show stats (if available)
+        // Show stats (tab switches and total tabs)
+        if (response.tabSwitches !== undefined) {
+          tabSwitches.textContent = response.tabSwitches || 0;
+        }
+        if (response.totalTabs !== undefined) {
+          totalTabs.textContent = response.totalTabs || 0;
+        }
         sessionStats.classList.remove('hidden');
         
       } else {
@@ -117,6 +161,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show/hide buttons
         startBtn.classList.remove('hidden');
         endBtn.classList.add('hidden');
+        
+        // Reset stats
+        tabSwitches.textContent = '0';
+        totalTabs.textContent = '0';
         
         // Hide dynamic content
         currentDomain.classList.add('hidden');
@@ -147,7 +195,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function startPeriodicUpdates() {
-    updateInterval = setInterval(updateStatus, 5000); // Update every 5 seconds
+    updateInterval = setInterval(() => {
+      updateStatus();
+      // Auto-sync every 30 seconds (every 6th update)
+      syncCounter++;
+      if (syncCounter >= 6) {
+        syncWithApp();
+        syncCounter = 0;
+      }
+    }, 5000); // Update every 5 seconds
   }
 
   function stopPeriodicUpdates() {
@@ -183,19 +239,21 @@ document.addEventListener('DOMContentLoaded', function() {
   async function checkAppSession() {
     try {
       // Try to get session data from the app
-      const response = await fetch('http://localhost:3000/api/browser-extension/session', {
+      const response = await fetch('http://localhost:3000/api/browser-tracking', {
         method: 'GET',
         credentials: 'include'
       });
       
       if (response.ok) {
         return await response.json();
+      } else {
+        console.log('No active session in app');
+        return null;
       }
     } catch (error) {
       console.log('Could not connect to app:', error);
+      return null;
     }
-    
-    return null;
   }
 
   // Start periodic updates if already tracking
