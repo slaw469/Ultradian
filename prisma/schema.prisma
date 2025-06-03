@@ -165,6 +165,7 @@ model WorkSession {
   // Activity tracking
   tabSwitches  Int      @default(0)
   totalTabs    Int      @default(1)
+  domainTimes  Json?    // Detailed time per domain (from browser extension)
   activityType String?  // CODING, WRITING, RESEARCH, COMMUNICATION, DESIGN, etc.
   
   // AI-generated insights

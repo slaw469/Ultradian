@@ -208,6 +208,14 @@ class WebNavigationTracker {
         }
         sendResponse({ success: true });
         break;
+        
+      case 'pageActivity':
+        // Handle page activity from content script
+        if (this.isTracking && this.currentTab) {
+          this.lastActivityTime = message.timestamp || Date.now();
+        }
+        // Don't send response for page activity to avoid blocking
+        break;
     }
   }
 
