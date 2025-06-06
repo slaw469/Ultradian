@@ -43,13 +43,19 @@ export function DashboardHeader() {
               href="/dashboard"
               className="flex items-center gap-2 text-lg font-semibold"
             >
-              <span>ModernSaaS</span>
+              <span>Ultradian</span>
             </Link>
             <Link
               href="/dashboard"
               className="flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-accent"
             >
               Dashboard
+            </Link>
+            <Link
+              href="/dashboard/analytics"
+              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-accent"
+            >
+              Analytics
             </Link>
             <Link
               href="/dashboard/profile"

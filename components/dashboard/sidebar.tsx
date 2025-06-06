@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Settings, User } from "lucide-react";
+import { LayoutDashboard, Settings, User, BarChart3 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -11,6 +11,11 @@ const sidebarItems = [
     title: "Dashboard",
     href: "/dashboard",
     icon: <LayoutDashboard className="h-5 w-5" />,
+  },
+  {
+    title: "Analytics",
+    href: "/dashboard/analytics",
+    icon: <BarChart3 className="h-5 w-5" />,
   },
   {
     title: "Profile",
@@ -30,8 +35,8 @@ export function Sidebar() {
   return (
     <aside className="hidden md:flex h-screen w-64 flex-col border-r bg-card">
       <div className="flex h-14 items-center border-b px-4">
-        <Link href="/\" className="flex items-center gap-2 font-semibold">
-          <span className="text-xl font-bold">ModernSaaS</span>
+        <Link href="/" className="flex items-center gap-2 font-semibold">
+          <span className="text-xl font-bold">Ultradian</span>
         </Link>
       </div>
       <div className="flex-1 overflow-auto py-2">
