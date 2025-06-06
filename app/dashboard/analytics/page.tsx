@@ -14,6 +14,8 @@ import { WeeklyTrends } from "@/components/analytics/weekly-trends";
 import { InsightsPanel } from "@/components/analytics/insights-panel";
 import { ProjectBreakdown } from "@/components/analytics/project-breakdown";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
+import { ExtensionBanner } from "@/components/dashboard/extension-banner";
+import { ExtensionSuccessMinimal } from "@/components/dashboard/extension-success";
 
 export default function AnalyticsPage() {
   const [timeRange, setTimeRange] = useState("7d");
@@ -59,6 +61,12 @@ export default function AnalyticsPage() {
           </Select>
         </div>
       </div>
+
+      {/* Extension Success Celebration */}
+      <ExtensionSuccessMinimal />
+
+      {/* Extension Banner for Analytics */}
+      <ExtensionBanner variant="analytics" />
 
       {/* Overview Cards */}
       <Suspense fallback={<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4"><LoadingSpinner /></div>}>

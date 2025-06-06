@@ -13,6 +13,7 @@ import { Label } from '@/components/ui/label';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { SessionCard } from './SessionCard';
 import { ActiveSessionCard } from './ActiveSessionCard';
+import { EmptySessionsPrompt } from './contextual-extension-prompt';
 import { 
   Calendar,
   Clock,
@@ -592,23 +593,28 @@ export function TodaySessionsFeed() {
           )}
 
           {!isLoading && filteredSessions.length === 0 && (
-            <div className="text-center py-8">
-              <div className="mx-auto w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
-                <Clock className="h-8 w-8 text-muted-foreground" />
+            <div className="space-y-6">
+              <div className="text-center py-8">
+                <div className="mx-auto w-24 h-24 bg-muted rounded-full flex items-center justify-center mb-4">
+                  <Clock className="h-8 w-8 text-muted-foreground" />
+                </div>
+                <h3 className="text-lg font-medium mb-2">No completed sessions yet {selectedPeriod !== 'all' ? `this ${selectedPeriod}` : 'today'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {activeSessions.length > 0 
+                    ? 'You have an active session running! Complete it to see AI insights.'
+                    : `Start your ${selectedPeriod !== 'all' ? `${selectedPeriod} ` : ''}focus session to see insights here!`
+                  }
+                </p>
+                {activeSessions.length === 0 && (
+                  <Button onClick={handleStartSession} disabled={isStartingSession || createSessionMutation.isPending}>
+                    <Play className="h-4 w-4 mr-2" />
+                    {isStartingSession || createSessionMutation.isPending ? 'Starting...' : 'Start Focus Session'}
+                  </Button>
+                )}
               </div>
-              <h3 className="text-lg font-medium mb-2">No completed sessions yet {selectedPeriod !== 'all' ? `this ${selectedPeriod}` : 'today'}</h3>
-              <p className="text-muted-foreground mb-4">
-                {activeSessions.length > 0 
-                  ? 'You have an active session running! Complete it to see AI insights.'
-                  : `Start your ${selectedPeriod !== 'all' ? `${selectedPeriod} ` : ''}focus session to see insights here!`
-                }
-              </p>
-              {activeSessions.length === 0 && (
-                <Button onClick={handleStartSession} disabled={isStartingSession || createSessionMutation.isPending}>
-                  <Play className="h-4 w-4 mr-2" />
-                  {isStartingSession || createSessionMutation.isPending ? 'Starting...' : 'Start Focus Session'}
-                </Button>
-              )}
+              
+              {/* Extension Prompt for Empty Sessions */}
+              <EmptySessionsPrompt />
             </div>
           )}
 
