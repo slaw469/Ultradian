@@ -170,8 +170,8 @@ function SessionStartForm({ open, onOpenChange, onSubmit, isLoading }: SessionSt
     
     onSubmit({
       title: title.trim(),
-      description: description.trim() || undefined,
-      websiteUrl: websiteUrl.trim() || undefined,
+      ...(description.trim() && { description: description.trim() }),
+      ...(websiteUrl.trim() && { websiteUrl: websiteUrl.trim() }),
     });
     
     // Reset form
@@ -286,7 +286,7 @@ export function TodaySessionsFeed() {
 
   const createSessionMutation = useMutation({
     mutationFn: createNewSession,
-    onSuccess: (newSession) => {
+    onSuccess: (newSession: any) => {
       console.log('✅ Session created successfully:', newSession);
       queryClient.invalidateQueries({ queryKey: ['todaySessions'] });
       refetch();
@@ -295,7 +295,7 @@ export function TodaySessionsFeed() {
         description: "Your session is now being tracked. Stay focused!",
       });
     },
-    onError: (error) => {
+    onError: (error: any) => {
       console.error('❌ Failed to create session:', error);
       toast({
         title: "Error",
@@ -314,7 +314,7 @@ export function TodaySessionsFeed() {
         description: "Great work! AI is now analyzing your session.",
       });
     },
-    onError: (error) => {
+    onError: (error: any) => {
       toast({
         title: "Error",
         description: "Failed to end session. Please try again.",
@@ -324,19 +324,19 @@ export function TodaySessionsFeed() {
   });
 
   // Separate active sessions (no endTime) from completed sessions
-  const activeSessions = sessions.filter(s => !s.endTime);
-  const completedSessions = sessions.filter(s => s.endTime);
+  const activeSessions = sessions.filter((s: WorkSession) => !s.endTime);
+  const completedSessions = sessions.filter((s: WorkSession) => s.endTime);
 
   // Debug logging
   console.log('📊 Sessions data:', { 
     totalSessions: sessions.length, 
     activeSessions: activeSessions.length, 
     completedSessions: completedSessions.length,
-    sessions: sessions.map(s => ({ id: s.id, title: s.title, hasEndTime: !!s.endTime }))
+    sessions: sessions.map((s: WorkSession) => ({ id: s.id, title: s.title, hasEndTime: !!s.endTime }))
   });
 
   // Group completed sessions by time period
-  const groupedSessions = completedSessions.reduce((acc, session) => {
+  const groupedSessions = completedSessions.reduce((acc: Record<'morning' | 'afternoon' | 'evening', WorkSession[]>, session: WorkSession) => {
     const hour = session.startTime.getHours();
     let period: 'morning' | 'afternoon' | 'evening';
     
@@ -352,22 +352,22 @@ export function TodaySessionsFeed() {
   // Calculate today's stats
   const todayStats: TodayStats = {
     totalSessions: sessions.length,
-    totalFocusTime: completedSessions.reduce((acc, s) => acc + (s.duration || 0), 0),
-    averageRating: completedSessions.filter(s => s.rating).reduce((acc, s, _, arr) => 
+    totalFocusTime: completedSessions.reduce((acc: number, s: WorkSession) => acc + (s.duration || 0), 0),
+    averageRating: completedSessions.filter((s: WorkSession) => s.rating).reduce((acc: number, s: WorkSession, _: number, arr: WorkSession[]) => 
       acc + (s.rating || 0) / arr.length, 0),
     topActivityType: 'NONE', // Will be calculated below
-    currentStreak: completedSessions.filter(s => s.rating && s.rating >= 4).length
+    currentStreak: completedSessions.filter((s: WorkSession) => s.rating && s.rating >= 4).length
   };
 
   // Calculate top activity type
-  const activityCounts = completedSessions.reduce((acc, s) => {
+  const activityCounts = completedSessions.reduce((acc: Record<string, number>, s: WorkSession) => {
     const type = s.activityType || 'OTHER';
     acc[type] = (acc[type] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
   const topActivityType = Object.entries(activityCounts)
-    .sort(([,a], [,b]) => b - a)[0]?.[0] || 'NONE';
+    .sort(([,a], [,b]) => (b as number) - (a as number))[0]?.[0] || 'NONE';
 
   // Update the stats with the calculated top activity type
   todayStats.topActivityType = topActivityType;
@@ -480,7 +480,7 @@ export function TodaySessionsFeed() {
       {activeSessions.length > 0 && (
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Active Session</h3>
-          {activeSessions.map((activeSession) => (
+          {activeSessions.map((activeSession: WorkSession) => (
             <ActiveSessionCard
               key={activeSession.id}
               session={activeSession}
@@ -621,8 +621,8 @@ export function TodaySessionsFeed() {
           {filteredSessions.length > 0 && (
             <div className="space-y-4">
               {filteredSessions
-                .sort((a, b) => b.startTime.getTime() - a.startTime.getTime())
-                .map((session) => (
+                .sort((a: WorkSession, b: WorkSession) => b.startTime.getTime() - a.startTime.getTime())
+                .map((session: WorkSession) => (
                   <SessionCard
                     key={session.id}
                     session={session}

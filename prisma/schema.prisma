@@ -1,9 +1,5 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-  provider = "prisma-client-js"
-  // Update binary targets to work in WebContainer
+  provider      = "prisma-client-js"
   binaryTargets = ["native"]
 }
 
@@ -18,15 +14,14 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
-
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
 }
@@ -40,36 +35,29 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-
-  accounts Account[]
-  sessions Session[]
-
-  // Onboarding and Preferences
-  onboardingCompleted Boolean @default(false)
-  chronotype         String?  // EARLY_BIRD, NIGHT_OWL, etc.
-  workStartTime      String?  // HH:mm format
-  workEndTime        String?  // HH:mm format
-  focusBlockDuration Int      @default(90)  // in minutes
-  breakDuration      Int      @default(20)  // in minutes
-  
-  // Calendar Integration
-  calendarConnected  Boolean  @default(false)
-  calendarId         String?
-  
-  // Relationships
-  focusBlocks        FocusBlock[]
-  feedbackLogs       FeedbackLog[]
-  notifications      Notification[]
-  onboardingAnswers  OnboardingQuizResponse[]
-  workSessions       WorkSession[]
+  id                  String                   @id @default(cuid())
+  name                String?
+  email               String?                  @unique
+  emailVerified       DateTime?
+  image               String?
+  password            String?
+  createdAt           DateTime                 @default(now())
+  updatedAt           DateTime                 @updatedAt
+  onboardingCompleted Boolean                  @default(false)
+  chronotype          String?
+  workStartTime       String?
+  workEndTime         String?
+  focusBlockDuration  Int                      @default(90)
+  breakDuration       Int                      @default(20)
+  calendarConnected   Boolean                  @default(false)
+  calendarId          String?
+  accounts            Account[]
+  feedbackLogs        FeedbackLog[]
+  focusBlocks         FocusBlock[]
+  notifications       Notification[]
+  onboardingAnswers   OnboardingQuizResponse[]
+  sessions            Session[]
+  workSessions        WorkSession[]
 }
 
 model VerificationToken {
@@ -81,106 +69,83 @@ model VerificationToken {
 }
 
 model FocusBlock {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-  startTime   DateTime
-  endTime     DateTime
-  status      String   // PLANNED, IN_PROGRESS, COMPLETED, INTERRUPTED
-  type        String   // DEEP_WORK, BREAK
-  
-  // Calendar Integration
+  id              String        @id @default(cuid())
+  userId          String
+  startTime       DateTime
+  endTime         DateTime
+  status          String
+  type            String
   calendarEventId String?
-  
-  // Relationships
-  feedbackLogs FeedbackLog[]
-  workSessions WorkSession[]
-  
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  feedbackLogs    FeedbackLog[]
+  user            User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workSessions    WorkSession[]
 }
 
 model FeedbackLog {
-  id           String   @id @default(cuid())
+  id           String     @id @default(cuid())
   userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   focusBlockId String
-  focusBlock   FocusBlock @relation(fields: [focusBlockId], references: [id], onDelete: Cascade)
-  
-  energyLevel  Int      // 1-5 scale
-  focusLevel   Int      // 1-5 scale
-  mood         String   // ENERGIZED, FOCUSED, TIRED, DISTRACTED
+  energyLevel  Int
+  focusLevel   Int
+  mood         String
   notes        String?
-  
-  createdAt    DateTime @default(now())
+  createdAt    DateTime   @default(now())
+  focusBlock   FocusBlock @relation(fields: [focusBlockId], references: [id], onDelete: Cascade)
+  user         User       @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Notification {
-  id        String   @id @default(cuid())
-  userId    String
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  
-  type      String   // FOCUS_START, BREAK_START, FOCUS_END
-  title     String
-  message   String
-  read      Boolean  @default(false)
-  
-  createdAt DateTime @default(now())
+  id           String    @id @default(cuid())
+  userId       String
+  type         String
+  title        String
+  message      String
+  read         Boolean   @default(false)
+  createdAt    DateTime  @default(now())
   scheduledFor DateTime?
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-// New model for onboarding quiz
 model OnboardingQuizResponse {
   id        String   @id @default(cuid())
   userId    String
   question  String
   answer    String
   createdAt DateTime @default(now())
-  
-  // Relations
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
 }
 
-// New model for tracking work session activities
 model WorkSession {
-  id           String   @id @default(cuid())
+  id           String      @id @default(cuid())
   userId       String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   focusBlockId String?
-  focusBlock   FocusBlock? @relation(fields: [focusBlockId], references: [id], onDelete: SetNull)
-  
-  // Session details
-  title        String   // Main activity title
-  description  String?  // Additional context
-  websiteUrl   String?  // Primary website/app URL
-  favicon      String?  // Website favicon URL
-  domain       String?  // Extracted domain
+  title        String
+  description  String?
+  websiteUrl   String?
+  favicon      String?
+  domain       String?
   startTime    DateTime
   endTime      DateTime?
-  duration     Int?     // Duration in minutes
-  
-  // Activity tracking
-  tabSwitches  Int      @default(0)
-  totalTabs    Int      @default(1)
-  domainTimes  Json?    // Detailed time per domain (from browser extension)
-  activityType String?  // CODING, WRITING, RESEARCH, COMMUNICATION, DESIGN, etc.
-  
-  // AI-generated insights
-  aiSummary    String?  // AI-generated session summary
-  nextSteps    Json?    // AI-suggested next steps (array of strings)
-  tags         Json?    // AI-generated tags (array of strings)
-  aiProcessed  Boolean  @default(false)
-  
-  // User feedback
-  rating       Int?     // 1-5 rating
-  notes        String?  // User notes
-  
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  
+  duration     Int?
+  tabSwitches  Int         @default(0)
+  totalTabs    Int         @default(1)
+  activityType String?
+  aiSummary    String?
+  nextSteps    Json?
+  tags         Json?
+  aiProcessed  Boolean     @default(false)
+  rating       Int?
+  notes        String?
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  domainTimes  Json?
+  focusBlock   FocusBlock? @relation(fields: [focusBlockId], references: [id])
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@index([userId, startTime])
   @@index([userId, activityType])
 }

@@ -1,0 +1,1982 @@
+{
+  "users": [
+    {
+      "id": "cmbfb2uex0000puip32w51n70",
+      "name": "steven",
+      "email": "stelaw469@gmail.com",
+      "emailVerified": null,
+      "image": null,
+      "password": "$2b$12$XluMsci3rGJ6dTq1XK6JPuKQJUYsRv7XMqmcvSPV5bqqtJxo9zLvK",
+      "createdAt": "2025-06-02T16:30:16.954Z",
+      "updatedAt": "2025-06-02T16:41:21.563Z",
+      "onboardingCompleted": true,
+      "chronotype": "INTERMEDIATE",
+      "workStartTime": "09:00",
+      "workEndTime": "17:00",
+      "focusBlockDuration": 90,
+      "breakDuration": 20,
+      "calendarConnected": false,
+      "calendarId": null
+    },
+    {
+      "id": "cmbl1nrgm0000f2kg10cbmwfi",
+      "name": "StudyBoy",
+      "email": "dsr@gmail.com",
+      "emailVerified": null,
+      "image": null,
+      "password": "$2b$12$WKRclBLPRqh5c5WR0X0aEOPohHY8X6j.Jd22Pd2ZgvVsZ4kNbgYZ.",
+      "createdAt": "2025-06-06T16:53:13.799Z",
+      "updatedAt": "2025-06-06T16:53:22.662Z",
+      "onboardingCompleted": true,
+      "chronotype": "INTERMEDIATE",
+      "workStartTime": "09:00",
+      "workEndTime": "17:00",
+      "focusBlockDuration": 90,
+      "breakDuration": 20,
+      "calendarConnected": false,
+      "calendarId": null
+    }
+  ],
+  "accounts": [],
+  "sessions": [],
+  "focusBlocks": [
+    {
+      "id": "cmbfbfy2e0021tj63x3myf1ul",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "startTime": "2025-06-02T14:00:00.000Z",
+      "endTime": "2025-06-02T15:30:00.000Z",
+      "status": "PLANNED",
+      "type": "DEEP_WORK",
+      "calendarEventId": null,
+      "createdAt": "2025-06-02T16:40:28.214Z",
+      "updatedAt": "2025-06-02T16:40:28.214Z"
+    },
+    {
+      "id": "cmbfbg1p90025tj63szkut13i",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "startTime": "2025-06-02T14:00:00.000Z",
+      "endTime": "2025-06-02T14:20:00.000Z",
+      "status": "PLANNED",
+      "type": "BREAK",
+      "calendarEventId": null,
+      "createdAt": "2025-06-02T16:40:32.926Z",
+      "updatedAt": "2025-06-02T16:40:32.926Z"
+    }
+  ],
+  "workSessions": [
+    {
+      "id": "cmbfsb7xk000213nah2zkx7xd",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Working on React components",
+      "description": "Building the session feed component",
+      "websiteUrl": "https://github.com/user/project",
+      "favicon": "https://www.google.com/s2/favicons?domain=github.com&sz=32",
+      "domain": "github.com",
+      "startTime": "2025-06-02T14:00:00.000Z",
+      "endTime": "2025-06-02T15:30:00.000Z",
+      "duration": 90,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "CODING",
+      "aiSummary": "You were developing React components for the session feed, focusing on the UI layout and data flow.",
+      "nextSteps": [
+        "Add real-time updates",
+        "Implement AI insights",
+        "Test with sample data"
+      ],
+      "tags": [
+        "react",
+        "frontend",
+        "development"
+      ],
+      "aiProcessed": true,
+      "rating": 4,
+      "notes": null,
+      "createdAt": "2025-06-03T00:32:41.189Z",
+      "updatedAt": "2025-06-03T00:32:41.189Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsc89v000913na8lxigyi4",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "API Documentation Review",
+      "description": "Reviewing and updating API documentation",
+      "websiteUrl": "https://docs.google.com/document/d/123",
+      "favicon": "https://www.google.com/s2/favicons?domain=docs.google.com&sz=32",
+      "domain": "docs.google.com",
+      "startTime": "2025-06-02T16:00:00.000Z",
+      "endTime": "2025-06-02T17:00:00.000Z",
+      "duration": 60,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "WRITING",
+      "aiSummary": "You spent time reviewing and updating API documentation, ensuring clarity and completeness.",
+      "nextSteps": [
+        "Add code examples",
+        "Review with team",
+        "Publish updates"
+      ],
+      "tags": [
+        "documentation",
+        "api",
+        "writing"
+      ],
+      "aiProcessed": true,
+      "rating": 3,
+      "notes": null,
+      "createdAt": "2025-06-03T00:33:28.290Z",
+      "updatedAt": "2025-06-03T00:33:28.290Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsb7xk000313natelqmdou",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "API Documentation Review",
+      "description": "Reviewing and updating API documentation",
+      "websiteUrl": "https://docs.google.com/document/d/123",
+      "favicon": "https://www.google.com/s2/favicons?domain=docs.google.com&sz=32",
+      "domain": "docs.google.com",
+      "startTime": "2025-06-02T16:00:00.000Z",
+      "endTime": "2025-06-02T17:00:00.000Z",
+      "duration": 60,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "WRITING",
+      "aiSummary": "You spent time reviewing and updating API documentation, ensuring clarity and completeness.",
+      "nextSteps": [
+        "Add code examples",
+        "Review with team",
+        "Publish updates"
+      ],
+      "tags": [
+        "documentation",
+        "api",
+        "writing"
+      ],
+      "aiProcessed": true,
+      "rating": 3,
+      "notes": null,
+      "createdAt": "2025-06-03T00:32:41.189Z",
+      "updatedAt": "2025-06-03T00:32:41.189Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsc89x000b13nafzh3n7el",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Research on AI Integration",
+      "description": "Researching best practices for AI integration",
+      "websiteUrl": "https://openai.com/docs",
+      "favicon": "https://www.google.com/s2/favicons?domain=openai.com&sz=32",
+      "domain": "openai.com",
+      "startTime": "2025-06-02T19:00:00.000Z",
+      "endTime": "2025-06-02T20:30:00.000Z",
+      "duration": 90,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "RESEARCH",
+      "aiSummary": "You researched AI integration patterns and best practices for implementing intelligent features.",
+      "nextSteps": [
+        "Implement OpenAI integration",
+        "Test AI responses",
+        "Add error handling"
+      ],
+      "tags": [
+        "ai",
+        "research",
+        "integration"
+      ],
+      "aiProcessed": true,
+      "rating": 5,
+      "notes": null,
+      "createdAt": "2025-06-03T00:33:28.290Z",
+      "updatedAt": "2025-06-03T00:33:28.290Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfskuv3000d13nawodtzz4o",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:40:10.717Z",
+      "endTime": "2025-06-03T00:51:35.265Z",
+      "duration": 11,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 11 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:40:10.815Z",
+      "updatedAt": "2025-06-03T00:51:36.773Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsmj4y000f13nahj39qzup",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:41:28.816Z",
+      "endTime": "2025-06-03T00:51:38.102Z",
+      "duration": 10,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 10 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:41:28.930Z",
+      "updatedAt": "2025-06-03T00:51:38.783Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsmkas000h13nag2swnhh6",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:41:30.237Z",
+      "endTime": "2025-06-03T00:51:40.583Z",
+      "duration": 10,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 10 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:41:30.436Z",
+      "updatedAt": "2025-06-03T00:51:40.753Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsmnl3000j13nadsjfy8vv",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:41:34.628Z",
+      "endTime": "2025-06-03T00:51:41.872Z",
+      "duration": 10,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 10 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:41:34.696Z",
+      "updatedAt": "2025-06-03T00:51:42.015Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsmxx5000l13na6sxhd7rt",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:41:46.496Z",
+      "endTime": "2025-06-03T00:51:42.925Z",
+      "duration": 10,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 10 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:41:48.090Z",
+      "updatedAt": "2025-06-03T00:51:43.039Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfso20b000n13nalhyx6y8h",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:42:40.005Z",
+      "endTime": "2025-06-03T00:51:43.918Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:42:40.043Z",
+      "updatedAt": "2025-06-03T00:51:44.068Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsoegm000p13na1h6ccq37",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:42:54.824Z",
+      "endTime": "2025-06-03T00:51:45.626Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:42:56.182Z",
+      "updatedAt": "2025-06-03T00:51:45.911Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsoi3n000r13na99xtmayc",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:00.790Z",
+      "endTime": "2025-06-03T00:51:48.556Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:00.900Z",
+      "updatedAt": "2025-06-03T00:51:48.696Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsoj75000t13nabjd2l92i",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:02.282Z",
+      "endTime": "2025-06-03T00:51:49.430Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:02.321Z",
+      "updatedAt": "2025-06-03T00:51:49.573Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsok6t000x13nas99ma8zk",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:03.593Z",
+      "endTime": "2025-06-03T00:52:04.611Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:03.606Z",
+      "updatedAt": "2025-06-03T00:52:04.724Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsojra000v13navqahqljp",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:03.016Z",
+      "endTime": "2025-06-03T00:52:04.969Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:03.046Z",
+      "updatedAt": "2025-06-03T00:52:05.077Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfspwdl0005hstzphxmcegw",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:44:05.874Z",
+      "endTime": "2025-06-03T00:52:03.414Z",
+      "duration": 8,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 8 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:44:06.058Z",
+      "updatedAt": "2025-06-03T00:52:03.854Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsphy10003hstz1exq26z5",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:47.317Z",
+      "endTime": "2025-06-03T00:52:03.932Z",
+      "duration": 8,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 8 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:47.353Z",
+      "updatedAt": "2025-06-03T00:52:04.033Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsp3jj0001hstziibamohm",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:43:28.051Z",
+      "endTime": "2025-06-03T00:52:04.251Z",
+      "duration": 9,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 9 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:43:28.686Z",
+      "updatedAt": "2025-06-03T00:52:04.368Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsyor2000rd3bw4x4hvwu7",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:50:55.312Z",
+      "endTime": "2025-06-03T00:51:53.168Z",
+      "duration": 1,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 1 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:50:56.079Z",
+      "updatedAt": "2025-06-03T00:51:53.627Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfstay0000hd3bwfdamtqvw",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:44.881Z",
+      "endTime": "2025-06-03T00:51:55.210Z",
+      "duration": 5,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 5 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:44.905Z",
+      "updatedAt": "2025-06-03T00:51:55.365Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfstag6000fd3bwjco9kwgq",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:44.228Z",
+      "endTime": "2025-06-03T00:51:55.491Z",
+      "duration": 5,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 5 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:44.262Z",
+      "updatedAt": "2025-06-03T00:51:55.616Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfst5vm000dd3bwfm137d9b",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:38.272Z",
+      "endTime": "2025-06-03T00:51:55.773Z",
+      "duration": 5,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 5 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:38.338Z",
+      "updatedAt": "2025-06-03T00:51:55.878Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfssr8g0009d3bwecw5jvv9",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:19.340Z",
+      "endTime": "2025-06-03T00:51:59.827Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:19.360Z",
+      "updatedAt": "2025-06-03T00:52:00.287Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfssq6f0005d3bwek9l2izp",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:17.967Z",
+      "endTime": "2025-06-03T00:52:01.253Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:17.992Z",
+      "updatedAt": "2025-06-03T00:52:01.470Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfssqir0007d3bwopcwnopy",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:18.404Z",
+      "endTime": "2025-06-03T00:52:02.469Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:18.435Z",
+      "updatedAt": "2025-06-03T00:52:02.498Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsspij0003d3bw75x259cj",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:17.102Z",
+      "endTime": "2025-06-03T00:52:02.791Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:17.131Z",
+      "updatedAt": "2025-06-03T00:52:02.952Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfssjfz0001d3bwr8hjbet2",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:07.741Z",
+      "endTime": "2025-06-03T00:52:02.930Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:09.261Z",
+      "updatedAt": "2025-06-03T00:52:03.088Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfssrld000bd3bwy0vup2yd",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:46:19.806Z",
+      "endTime": "2025-06-03T00:52:06.273Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:46:19.825Z",
+      "updatedAt": "2025-06-03T00:52:06.400Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsxg5v000pd3bwhilgu8tw",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:49:58.247Z",
+      "endTime": "2025-06-03T00:51:53.815Z",
+      "duration": 2,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 2 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:49:58.291Z",
+      "updatedAt": "2025-06-03T00:51:53.937Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsw3s3000nd3bwot1texlv",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:48:54.768Z",
+      "endTime": "2025-06-03T00:51:54.101Z",
+      "duration": 3,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 3 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:48:55.586Z",
+      "updatedAt": "2025-06-03T00:51:54.219Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsvwqu000ld3bw80unghhk",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:48:46.393Z",
+      "endTime": "2025-06-03T00:51:54.468Z",
+      "duration": 3,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 3 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:48:46.471Z",
+      "updatedAt": "2025-06-03T00:51:54.582Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsvowz000jd3bw71y8y0ya",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:48:36.209Z",
+      "endTime": "2025-06-03T00:51:54.889Z",
+      "duration": 3,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 3 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:48:36.322Z",
+      "updatedAt": "2025-06-03T00:51:55.044Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbft11fe000td3bw9wmivjyj",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Evening Focus Session",
+      "description": "Wrapping up the day with focused work",
+      "websiteUrl": "http://localhost:3000/dashboard",
+      "favicon": "https://www.google.com/s2/favicons?domain=localhost&sz=32",
+      "domain": "localhost",
+      "startTime": "2025-06-03T00:52:45.607Z",
+      "endTime": "2025-06-03T00:58:28.307Z",
+      "duration": 6,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Worked on Evening Focus Session for 6 minutes on localhost",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "other",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:52:45.810Z",
+      "updatedAt": "2025-06-03T00:58:29.093Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbft9k8z000vd3bwzc9qwsfe",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Coding",
+      "description": "developing this app lol",
+      "websiteUrl": "https://github.com/slaw469/Ultradian",
+      "favicon": "https://www.google.com/s2/favicons?domain=github.com&sz=32",
+      "domain": "github.com",
+      "startTime": "2025-06-03T00:59:23.366Z",
+      "endTime": "2025-06-03T01:12:31.856Z",
+      "duration": 13,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "CODING",
+      "aiSummary": "Worked on Coding for 13 minutes on github.com",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "coding",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T00:59:23.459Z",
+      "updatedAt": "2025-06-03T01:12:33.249Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbftqnh0000xd3bw4x77gma6",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "coding",
+      "description": "lol",
+      "websiteUrl": "https://github.com/slaw469/Ultradian",
+      "favicon": "https://www.google.com/s2/favicons?domain=github.com&sz=32",
+      "domain": "github.com",
+      "startTime": "2025-06-03T01:12:40.674Z",
+      "endTime": "2025-06-03T01:13:50.648Z",
+      "duration": 1,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "CODING",
+      "aiSummary": "Worked on coding for 1 minutes on github.com",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "coding",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:12:40.788Z",
+      "updatedAt": "2025-06-03T01:13:51.181Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfttejq000zd3bwregtri3o",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "code",
+      "description": "c",
+      "websiteUrl": "https://github.com/slaw469/Ultradian",
+      "favicon": "https://www.google.com/s2/favicons?domain=github.com&sz=32",
+      "domain": "github.com",
+      "startTime": "2025-06-03T01:14:48.875Z",
+      "endTime": "2025-06-03T01:15:36.026Z",
+      "duration": 1,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "CODING",
+      "aiSummary": "Worked on code for 1 minutes on github.com",
+      "nextSteps": [
+        "Continue with the current task",
+        "Review progress made",
+        "Plan next phase of work"
+      ],
+      "tags": [
+        "coding",
+        "productivity",
+        "focus"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:14:49.188Z",
+      "updatedAt": "2025-06-03T01:15:36.414Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfu26bt0001jwhetlmlxwlk",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "c",
+      "description": "c",
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-03T01:21:38.382Z",
+      "endTime": "2025-06-03T01:22:15.548Z",
+      "duration": 1,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: c. Spent 1 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:21:38.441Z",
+      "updatedAt": "2025-06-03T01:22:16.929Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfucndb0001wxiz8x2ez1yr",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "c",
+      "description": "c",
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-03T01:29:47.060Z",
+      "endTime": "2025-06-03T01:37:14.872Z",
+      "duration": 7,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: c. Spent 7 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:29:47.087Z",
+      "updatedAt": "2025-06-03T01:37:14.893Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfur0uu0001mt3ar8as913q",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "bb",
+      "description": "bb",
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-03T01:40:57.608Z",
+      "endTime": "2025-06-03T01:42:09.336Z",
+      "duration": 1,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: bb. Spent 1 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:40:57.737Z",
+      "updatedAt": "2025-06-03T01:42:10.621Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfuwkvq0001tem5y45t805d",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "vbbb",
+      "description": "b",
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-03T01:45:16.941Z",
+      "endTime": "2025-06-03T01:47:08.538Z",
+      "duration": 2,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: vbbb. Spent 2 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T01:45:16.980Z",
+      "updatedAt": "2025-06-03T01:47:08.964Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbh0w7yz00013ffp59f06910",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "coding",
+      "description": "cc",
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-03T21:20:44.022Z",
+      "endTime": "2025-06-03T21:22:14.215Z",
+      "duration": 2,
+      "tabSwitches": 3,
+      "totalTabs": 3,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: coding. Spent 2 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-03T21:20:44.120Z",
+      "updatedAt": "2025-06-03T21:22:15.028Z",
+      "domainTimes": {
+        "localhost": 2122,
+        "mail.google.com": 527,
+        "tutorialkit.dev": 581
+      }
+    },
+    {
+      "id": "cmbjml2ow00033ffpuwyohqsx",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "m",
+      "description": null,
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-05T17:03:27.909Z",
+      "endTime": "2025-06-05T17:04:18.161Z",
+      "duration": 1,
+      "tabSwitches": 4,
+      "totalTabs": 4,
+      "activityType": "OTHER",
+      "aiSummary": "Work session: m. Spent 1 minutes focused on tasks using various tools",
+      "nextSteps": [
+        "Review progress made in this session",
+        "Plan next steps for continuation",
+        "Document any insights or learnings"
+      ],
+      "tags": [
+        "productivity",
+        "focus",
+        "work",
+        "quick-task"
+      ],
+      "aiProcessed": true,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-05T17:03:27.966Z",
+      "updatedAt": "2025-06-05T17:04:19.509Z",
+      "domainTimes": {
+        "localhost": 42958,
+        "chatgpt.com": 1901,
+        "www.youtube.com": 2098
+      }
+    },
+    {
+      "id": "cmbjn1ynv000112h8skxniqii",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "n",
+      "description": null,
+      "websiteUrl": null,
+      "favicon": null,
+      "domain": null,
+      "startTime": "2025-06-05T17:16:35.603Z",
+      "endTime": null,
+      "duration": null,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": null,
+      "aiSummary": null,
+      "nextSteps": null,
+      "tags": null,
+      "aiProcessed": false,
+      "rating": null,
+      "notes": null,
+      "createdAt": "2025-06-05T17:16:35.895Z",
+      "updatedAt": "2025-06-05T17:16:35.895Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsc89v000713na9k0ivlnw",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Working on React components",
+      "description": "Building the session feed component",
+      "websiteUrl": "https://github.com/user/project",
+      "favicon": "https://www.google.com/s2/favicons?domain=github.com&sz=32",
+      "domain": "github.com",
+      "startTime": "2025-06-02T14:00:00.000Z",
+      "endTime": "2025-06-02T15:30:00.000Z",
+      "duration": 90,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "CODING",
+      "aiSummary": "You were developing React components for the session feed, focusing on the UI layout and data flow.",
+      "nextSteps": [
+        "Add real-time updates",
+        "Implement AI insights",
+        "Test with sample data"
+      ],
+      "tags": [
+        "react",
+        "frontend",
+        "development"
+      ],
+      "aiProcessed": true,
+      "rating": 4,
+      "notes": null,
+      "createdAt": "2025-06-03T00:33:28.290Z",
+      "updatedAt": "2025-06-03T00:33:28.290Z",
+      "domainTimes": null
+    },
+    {
+      "id": "cmbfsb7zi000513navud7fifj",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "focusBlockId": null,
+      "title": "Research on AI Integration",
+      "description": "Researching best practices for AI integration",
+      "websiteUrl": "https://openai.com/docs",
+      "favicon": "https://www.google.com/s2/favicons?domain=openai.com&sz=32",
+      "domain": "openai.com",
+      "startTime": "2025-06-02T19:00:00.000Z",
+      "endTime": "2025-06-02T20:30:00.000Z",
+      "duration": 90,
+      "tabSwitches": 0,
+      "totalTabs": 1,
+      "activityType": "RESEARCH",
+      "aiSummary": "You researched AI integration patterns and best practices for implementing intelligent features.",
+      "nextSteps": [
+        "Implement OpenAI integration",
+        "Test AI responses",
+        "Add error handling"
+      ],
+      "tags": [
+        "ai",
+        "research",
+        "integration"
+      ],
+      "aiProcessed": true,
+      "rating": 5,
+      "notes": "nice",
+      "createdAt": "2025-06-03T00:32:41.189Z",
+      "updatedAt": "2025-06-03T00:48:33.455Z",
+      "domainTimes": null
+    }
+  ],
+  "feedbackLogs": [],
+  "notifications": [
+    {
+      "id": "cmbfbfy3b0022tj63h8wf5xgp",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "type": "FOCUS_START",
+      "title": "Focus Time",
+      "message": "Time to start focusing!",
+      "read": false,
+      "createdAt": "2025-06-02T16:40:28.248Z",
+      "scheduledFor": "2025-06-02T14:00:00.000Z"
+    },
+    {
+      "id": "cmbfbfy3b0023tj63pwtzrxam",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "type": "FOCUS_END",
+      "title": "Break Time",
+      "message": "Great work! Time for a break.",
+      "read": false,
+      "createdAt": "2025-06-02T16:40:28.248Z",
+      "scheduledFor": "2025-06-02T15:30:00.000Z"
+    },
+    {
+      "id": "cmbfbg1pc0026tj63ib6xubhy",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "type": "FOCUS_START",
+      "title": "Focus Time",
+      "message": "Time to start focusing!",
+      "read": false,
+      "createdAt": "2025-06-02T16:40:32.928Z",
+      "scheduledFor": "2025-06-02T14:00:00.000Z"
+    },
+    {
+      "id": "cmbfbg1pc0027tj63azx2c4wr",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "type": "FOCUS_END",
+      "title": "Break Time",
+      "message": "Great work! Time for a break.",
+      "read": false,
+      "createdAt": "2025-06-02T16:40:32.928Z",
+      "scheduledFor": "2025-06-02T14:20:00.000Z"
+    }
+  ],
+  "onboardingAnswers": [
+    {
+      "id": "cmbfbc8050001tj63n31y9o9p",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc80m0003tj63cw1nsjkb",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc80m0007tj63cl94te79",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc80m0005tj63itve8whn",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc80n0009tj63w07cbja9",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc80r000btj63efvmqtch",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:34.469Z"
+    },
+    {
+      "id": "cmbfbc9ij000ltj63j9vka7dq",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbc9ij000ntj63hqbn7vbw",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbc9ij000jtj63qmnbhdgd",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbc9ij000ktj63wrhdvv4u",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbc9ij000dtj637s4xt9cl",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbc9ij000ftj63yo1f6pjd",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:36.427Z"
+    },
+    {
+      "id": "cmbfbcb8y000ptj63a2n3wic1",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbcb8y000wtj63rnafyuj6",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbcb8y000ttj63piat9wo6",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbcb8y000ytj63tgsd8jgq",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbcb8y000ztj637smh6mgn",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbcb8y000xtj63ikyfeuji",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:38.674Z"
+    },
+    {
+      "id": "cmbfbchz8001btj63r335zn8u",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "EARLY_BIRD",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbchz80014tj639dzjrc8m",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbchz80017tj63te8cbyop",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbchz8001atj63encizylx",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "60",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbchz80018tj63w7dsfr5y",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbchz80013tj63vsx4ayol",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:47.396Z"
+    },
+    {
+      "id": "cmbfbckbs001gtj63fzpx500i",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbckbs001jtj632il8pa9o",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbckbs001itj63renc44ba",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbckbs001dtj63s8kxnyya",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbckbt001ntj63wwqz8l9u",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbckbs001mtj63wdewxah6",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:50.441Z"
+    },
+    {
+      "id": "cmbfbcr2r001rtj63bpd6rq87",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbcr2r001vtj636ww499m0",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbcr2r001ttj638liaddis",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbcr2r001xtj63atzck0g3",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbcr2r001stj637bfyiuea",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbcr2r001ztj63imz9v2wv",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:37:59.187Z"
+    },
+    {
+      "id": "cmbfbgtvr002btj63q6zsy0ri",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbgtvq0029tj63ybwux9y9",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbgtw5002ftj631yqmuuo7",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbgtwb002htj63mbva8s49",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbgtw5002dtj63ray9pv4e",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbgtwb002jtj63hmx82l8a",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:41:09.447Z"
+    },
+    {
+      "id": "cmbfbh37p002ltj63d3lnnd6d",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-02T16:41:21.541Z"
+    },
+    {
+      "id": "cmbfbh37p002stj63t8irh9li",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-02T16:41:21.542Z"
+    },
+    {
+      "id": "cmbfbh37p002ttj636y0z6xd2",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-02T16:41:21.542Z"
+    },
+    {
+      "id": "cmbfbh37q002vtj63wnv3zndt",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-02T16:41:21.542Z"
+    },
+    {
+      "id": "cmbfbh37p002ntj636icp5e40",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-02T16:41:21.542Z"
+    },
+    {
+      "id": "cmbfbh37p002ptj63p1wya7mm",
+      "userId": "cmbfb2uex0000puip32w51n70",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-02T16:41:21.542Z"
+    },
+    {
+      "id": "cmbl1nyad0002f2kgsksrnuy8",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "chronotype",
+      "answer": "INTERMEDIATE",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    },
+    {
+      "id": "cmbl1nyan0004f2kg5vt1hmcf",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "workEndTime",
+      "answer": "17:00",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    },
+    {
+      "id": "cmbl1nyan0007f2kgoustp9et",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "breakDuration",
+      "answer": "20",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    },
+    {
+      "id": "cmbl1nyan0008f2kgyumcw03l",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "calendarIntegration",
+      "answer": "false",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    },
+    {
+      "id": "cmbl1nyao000af2kg6017mhdx",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "focusBlockDuration",
+      "answer": "90",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    },
+    {
+      "id": "cmbl1nyaq000cf2kgde7vyhxf",
+      "userId": "cmbl1nrgm0000f2kg10cbmwfi",
+      "question": "workStartTime",
+      "answer": "09:00",
+      "createdAt": "2025-06-06T16:53:22.645Z"
+    }
+  ]
+}
